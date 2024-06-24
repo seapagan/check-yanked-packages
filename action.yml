@@ -49,7 +49,7 @@ runs:
         python-version: ${{ inputs.python-version }}
 
     - name: Install Poetry
-      if: env.poetry_installed == 'false'
+      if: ${{env.poetry_installed == 'false'}}
       uses: snok/install-poetry@v1
       with:
         version: "latest"
