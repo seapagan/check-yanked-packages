@@ -30,6 +30,12 @@ runs:
         else
           echo "python_installed_by_setup=false" >> $GITHUB_ENV
         fi
+
+        if poetry --version > /dev/null 2>&1; then
+          echo "poetry_installed=true" >> $GITHUB_ENV
+        else
+          echo "poetry_installed=false" >> $GITHUB_ENV
+        fi
       shell: bash
 
     - name: Checkout repository
@@ -43,6 +49,7 @@ runs:
         python-version: ${{ inputs.python-version }}
 
     - name: Install Poetry
+      if: env.poetry_installed == 'false'
       uses: snok/install-poetry@v1
       with:
         version: "latest"
