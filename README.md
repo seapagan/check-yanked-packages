@@ -42,6 +42,10 @@ jobs:
         uses: seapagan/check-yanked-packages@v1
 ```
 
+Note that you do **not** need to checkout the repository or setup Python, as the
+action will do this for you. However, if you do have these steps in your
+workflow, the action will not attempt to run them again.
+
 ### As part of a larger workflow
 
 If this action is run as part of a larger workflow, put it after the main
