@@ -1,6 +1,10 @@
 name: "Poetry Check Yanked"
 description: "A GitHub Action for checking yanked packages using poetry-plugin-check-yanked."
-author: "Your Name"
+author: "Grant Ramsay <seapagan@gmail.com>"
+
+branding:
+  icon: "anchor"
+  color: "white"
 
 inputs:
   path:
